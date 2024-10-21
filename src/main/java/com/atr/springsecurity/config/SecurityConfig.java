@@ -26,7 +26,8 @@ public class SecurityConfig {
                         .anyRequest().authenticated()
                 )
                 .formLogin(form -> form
-                        .defaultSuccessUrl("/", true)
+                        //.loginPage("/login") // Define a URL da página de login personalizada
+                        .defaultSuccessUrl("/", true) // Login padrão do Spring Security
                 )
                 .logout(config -> config.logoutSuccessUrl("/"))
                 .build();
